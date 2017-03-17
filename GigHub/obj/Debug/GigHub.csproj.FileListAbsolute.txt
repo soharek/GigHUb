@@ -82,3 +82,5 @@ C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\Gig
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.pdb
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.InitialMigration.resources
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.csproj.GenerateResource.Cache
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.CreateGigModel.resources
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.OverrideConvetionsForGigsAndGenres.resources

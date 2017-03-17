@@ -205,9 +205,20 @@
     <Compile Include="Migrations\201703162317487_InitialMigration.Designer.cs">
       <DependentUpon>201703162317487_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703162343596_CreateGigModel.cs" />
+    <Compile Include="Migrations\201703162343596_CreateGigModel.Designer.cs">
+      <DependentUpon>201703162343596_CreateGigModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703162356524_OverrideConvetionsForGigsAndGenres.cs" />
+    <Compile Include="Migrations\201703162356524_OverrideConvetionsForGigsAndGenres.Designer.cs">
+      <DependentUpon>201703162356524_OverrideConvetionsForGigsAndGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Gig.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -285,6 +296,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703162317487_InitialMigration.resx">
       <DependentUpon>201703162317487_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703162343596_CreateGigModel.resx">
+      <DependentUpon>201703162343596_CreateGigModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703162356524_OverrideConvetionsForGigsAndGenres.resx">
+      <DependentUpon>201703162356524_OverrideConvetionsForGigsAndGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
