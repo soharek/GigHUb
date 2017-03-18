@@ -1,7 +1,6 @@
 ﻿using GigHub.Models;
 using GigHub.ViewModels;
 using Microsoft.AspNet.Identity;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -33,16 +32,16 @@ namespace GigHub.Controllers
         [HttpPost]
         public ActionResult Create(GigFormViewModel viewModel)
         {
-            var artitstID = User.Identity.GetUserId(); //i take out users Id
-            var artist = _context.Users.Single(u => u.Id == artitstID); // here i use the Id from line above
+            
+            
             var genre = _context.Genres.Single(g => g.Id == viewModel.Genre);
 
             var gig = new Gig()
             {
-                Artist = artist,
+                ArtistId = User.Identity.GetUserId(),
                 Venue = viewModel.Venue,
-                Genre = genre,
-                DateTime = DateTime.Parse($"{viewModel.Date} {viewModel.Time}")
+                GenreId = viewModel.Genre,
+                DateTime = viewModel.DateTime
 
             };
 
