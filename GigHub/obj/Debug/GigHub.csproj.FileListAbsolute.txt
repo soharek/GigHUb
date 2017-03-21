@@ -86,3 +86,5 @@ C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\Gig
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.OverrideConvetionsForGigsAndGenres.resources
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.PopulateGenresTable.resources
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.Addforeignkeypropstogig.resources
+C:\Users\baske\documents\visual studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddNameToAplicationUser.resources
+C:\Users\baske\documents\visual studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddLastNameToAplicationUser.resources

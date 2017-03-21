@@ -222,6 +222,14 @@
     <Compile Include="Migrations\201703181756104_Add foreignkey props to gig.Designer.cs">
       <DependentUpon>201703181756104_Add foreignkey props to gig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703212254066_AddNameToAplicationUser.cs" />
+    <Compile Include="Migrations\201703212254066_AddNameToAplicationUser.Designer.cs">
+      <DependentUpon>201703212254066_AddNameToAplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703212258248_AddLastNameToAplicationUser.cs" />
+    <Compile Include="Migrations\201703212258248_AddLastNameToAplicationUser.Designer.cs">
+      <DependentUpon>201703212258248_AddLastNameToAplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -321,6 +329,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703181756104_Add foreignkey props to gig.resx">
       <DependentUpon>201703181756104_Add foreignkey props to gig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703212254066_AddNameToAplicationUser.resx">
+      <DependentUpon>201703212254066_AddNameToAplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703212258248_AddLastNameToAplicationUser.resx">
+      <DependentUpon>201703212258248_AddLastNameToAplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
