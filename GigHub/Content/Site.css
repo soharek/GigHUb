@@ -104,4 +104,55 @@ h6,
     -ms-border-radius: 9px;
 }
 
+.gigs {
+    list-style: none;
+    margin-top: 30px;
+}
 
+.gigs li {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.details {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+}
+
+.details span {
+    display: block; 
+}
+
+.date {
+    width: 60px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: red;
+
+}
+
+.month {
+    color: white;
+    padding: 2px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: lato;
+}
+
+.day {
+    background-color: #f7f7f7;
+    font-size: 20px;
+    padding: 3px 5px;
+}
+
+.artist {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.genre {
+    font-size: 15px;
+}
