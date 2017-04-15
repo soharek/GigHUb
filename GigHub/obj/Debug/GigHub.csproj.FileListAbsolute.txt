@@ -96,3 +96,5 @@ C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\System.Ne
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\System.Web.Http.xml
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\System.Web.Http.WebHost.xml
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.AAAAAAAAAAAAAAAA.resources
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.ArtistFollowWaddedtomodel.resources
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.changeArtisFollowtfollowings.resources

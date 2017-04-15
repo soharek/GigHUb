@@ -1,4 +1,5 @@
 ﻿using GigHub.Models;
+using GigHub.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Data.Entity;
@@ -7,7 +8,7 @@ using System.Web.Mvc;
 
 namespace GigHub.Controllers
 {
-    [Authorize]
+
     public class HomeController : Controller
     {
         private ApplicationDbContext _context;
@@ -26,11 +27,23 @@ namespace GigHub.Controllers
             var userId = User.Identity.GetUserId();
 
             var upcomingGigs =
-                _context.Gigs.Include(g => g.Artist).Include(g => g.Genre).Where(g => g.DateTime > DateTime.Now);
+                _context.Gigs
+                .Include(g => g.Artist)
+                .Include(g => g.Genre)
+                .Where(g => g.DateTime > DateTime.Now);
+
+            var viewModel = new GigsViewModel
+            {
+                UpcomingGigs = upcomingGigs,
+                ShowActions = User.Identity.IsAuthenticated,
+                Heading = "Upcoming Gigs"
+            };
+
+
                 
 
 
-            return View(upcomingGigs);
+            return View("Gigs",viewModel);
         }
 
         public ActionResult About()

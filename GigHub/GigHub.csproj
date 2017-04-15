@@ -210,10 +210,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendencesController.cs" />
+    <Compile Include="Controllers\FolloweesController.cs" />
+    <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Dtos\AttendeceDto.cs" />
+    <Compile Include="Dtos\FollowingDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,10 +256,19 @@
     <Compile Include="Migrations\201704142308433_AAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!.Designer.cs">
       <DependentUpon>201704142308433_AAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704151459384_ArtistFollowW added to model.cs" />
+    <Compile Include="Migrations\201704151459384_ArtistFollowW added to model.Designer.cs">
+      <DependentUpon>201704151459384_ArtistFollowW added to model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704151611371_change ArtisFollow t followings.cs" />
+    <Compile Include="Migrations\201704151611371_change ArtisFollow t followings.Designer.cs">
+      <DependentUpon>201704151611371_change ArtisFollow t followings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendence.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -265,6 +277,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\DateCustomValidation.cs" />
     <Compile Include="ViewModels\GigFormViewModel.cs" />
+    <Compile Include="ViewModels\GigsViewModel.cs" />
     <Compile Include="ViewModels\TimeCustomValidation.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -304,7 +317,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Gigs.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -326,6 +339,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Gigs\Create.cshtml" />
+    <Content Include="Views\Gigs\Attendig.cshtml" />
+    <Content Include="Views\Followees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,6 +380,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704142308433_AAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!.resx">
       <DependentUpon>201704142308433_AAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704151459384_ArtistFollowW added to model.resx">
+      <DependentUpon>201704151459384_ArtistFollowW added to model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704151611371_change ArtisFollow t followings.resx">
+      <DependentUpon>201704151611371_change ArtisFollow t followings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

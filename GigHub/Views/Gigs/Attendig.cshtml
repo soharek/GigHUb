@@ -1,0 +1,43 @@
+﻿@model GigHub.ViewModels.GigsViewModel
+
+@{
+    ViewBag.Title = "Attendig";
+}
+
+<h2>Attendig</h2>
+
+<ul class="gigs">
+    @foreach (var gig in Model.UpcomingGigs)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @gig.DateTime.ToString("MMM")
+                </div>
+                <div class="day">
+                    @gig.DateTime.ToString("d ")
+                </div>
+            </div>
+            <div class="details">
+                <span class="artist">
+                    @gig.Artist.Name @gig.Artist.LastName
+                    @if (Model.ShowActions)
+                    {
+                        <button data-artist-id="@gig.ArtistId" class="btn btn-link btn-sm js-toggle-follow">Follow?</button>
+
+                    }
+                </span>
+                <span class="genre">
+                    @gig.Genre.Name
+                    @if (Model.ShowActions)
+                    {
+                        <button data-gig-id="@gig.Id" class="btn-default btn small-btn btn-xs pull-right js-toggle-attendece">Going? </button>
+
+                    }
+                </span>
+
+            </div>
+        </li>
+    }
+</ul>
+
