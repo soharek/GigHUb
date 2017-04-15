@@ -98,11 +98,16 @@ h6,
 }
 
 .btn {
-    font-size: 17px;
-    padding: 10px 25px;
+/*    font-size: 17px;*/
+/*    padding: 10px 25px;*/
     border-radius: 9px;
     -ms-border-radius: 9px;
 }
+
+.small-btn {
+    display: inline-block;
+}
+
 
 .gigs {
     list-style: none;

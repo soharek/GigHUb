@@ -33,7 +33,7 @@ namespace GigHub.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
         {
-
+            var a = User.Identity.GetUserId();
             if (!ModelState.IsValid)
             {
                 viewModel.Genres = _context.Genres.ToList();
@@ -48,6 +48,8 @@ namespace GigHub.Controllers
                 DateTime = viewModel.ToDateTime()
 
             };
+
+
 
             _context.Gigs.Add(gig);
             _context.SaveChanges();
