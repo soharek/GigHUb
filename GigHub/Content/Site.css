@@ -86,9 +86,11 @@ h6,
 
 .form-control {
     font-size: 17px;
-    padding: 20px 15px;
+    height: 48px;
     -ms-border-radius: 9px;
     border-radius: 9px;
+    padding: 10px;
+    
 }
 
 .form-control:hover {
@@ -160,4 +162,14 @@ h6,
 
 .genre {
     font-size: 15px;
+}
+
+.gigs >li .actions {
+    font-size: 15px;
+    display: none;
+}
+
+.gigs > li:hover .actions {
+    display: block;
+
 }
