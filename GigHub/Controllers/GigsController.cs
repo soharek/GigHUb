@@ -133,15 +133,14 @@ namespace GigHub.Controllers
             }
 
             string userId = User.Identity.GetUserId();
-            var gigInDb = _context.Gigs.Single(g => g.Id == viewModel.Id && g.ArtistId ==userId);
-
-            gigInDb.Venue = viewModel.Venue;
-            gigInDb.DateTime = viewModel.ToDateTime();
-            gigInDb.GenreId = viewModel.Genre; 
+            var gigInDb = _context.Gigs
+                .Include(x=>x.Attendances.Select(u=>u.Attendee))
+                .Single(g => g.Id == viewModel.Id && g.ArtistId ==userId);
 
 
 
-          
+            gigInDb.Modify(viewModel.ToDateTime(),viewModel.Venue,viewModel.Genre);
+
             _context.SaveChanges();
 
             return RedirectToAction("Mine", "Gigs");

@@ -118,7 +118,7 @@ h6,
 
 .gigs li {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .details {
@@ -129,6 +129,7 @@ h6,
 
 .details span {
     display: block; 
+
 }
 
 .date {
@@ -156,12 +157,12 @@ h6,
 
 .artist {
     margin-top: 5px;
-    margin-bottom: 10px;
     font-weight: bold;
 }
 
 .genre {
     font-size: 15px;
+    
 }
 
 .gigs >li .actions {
