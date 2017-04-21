@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GigHub.Models
@@ -9,6 +10,8 @@ namespace GigHub.Models
         public int Id { get; set; }
         
         public ApplicationUser Artist { get; set; }
+
+        public bool IsCanceled { get; set; }
 
         [Required]
         public string ArtistId { get; set; }
@@ -22,6 +25,13 @@ namespace GigHub.Models
         public Genre Genre { get; set; }
 
         [Required]
-        public byte GenreId  { get; set; }  
+        public byte GenreId  { get; set; }
+
+        public ICollection<Attendance> Attendances { get; private set; }
+
+        public Gig()
+        {
+            Attendances = new List<Attendance>();
+        }
     }
 }
