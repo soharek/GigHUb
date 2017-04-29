@@ -55,6 +55,12 @@ namespace GigHub.Controllers
             return View("Gigs", viewModel);
         }
 
+        [HttpPost]
+        public ActionResult Search(GigsViewModel model)
+        {
+            
+            return RedirectToAction("Index","Home", new {query = model.SearchWord});
+        }
 
         [Authorize]
         public ActionResult Create()
@@ -146,5 +152,41 @@ namespace GigHub.Controllers
             return RedirectToAction("Mine", "Gigs");
 
         }
+
+
+        public ActionResult Details(int id)
+        {
+
+            var gig = _context.Gigs
+                .Where(g => g.Id == id)
+                .Include(x => x.Artist)
+                .Include(g=>g.Genre)
+                .SingleOrDefault();
+
+            if (gig == null)
+                return HttpNotFound();
+
+            var viemodel = new GigDetailsViewModel { Gig = gig};
+
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.Identity.GetUserId();
+                viemodel.IsAttending = _context.Attendances.Any(g => g.GigId == gig.Id && g.AttendeeId == userId);
+
+                viemodel.IsFollowing =
+                    _context.Followings.Any(g => g.FollowerId == userId && g.FolloweeId == gig.ArtistId);
+            }
+
+
+            return View("Details", viemodel);
+        }
+
+    }
+
+    public class GigDetailsViewModel
+    {
+        public Gig Gig { get; set; }
+        public bool IsFollowing { get; set; }
+        public bool IsAttending { get; set; }
     }
 }

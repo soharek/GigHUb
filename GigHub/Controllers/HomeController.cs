@@ -22,7 +22,7 @@ namespace GigHub.Controllers
 
         
 
-        public ActionResult Index()
+        public ActionResult Index(string query = null)
         {
             var userId = User.Identity.GetUserId();
 
@@ -32,11 +32,22 @@ namespace GigHub.Controllers
                 .Include(g => g.Genre)
                 .Where(g => g.DateTime > DateTime.Now && !g.IsCanceled);
 
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                upcomingGigs =
+                    upcomingGigs
+                    .Where(x => x.Genre.Name.Contains(query) ||
+                    x.Artist.Name.Contains(query)||
+                    x.Venue.Contains(query));
+            }
+
+
             var viewModel = new GigsViewModel
             {
                 UpcomingGigs = upcomingGigs,
                 ShowActions = User.Identity.IsAuthenticated,
-                Heading = "Upcoming Gigs"
+                Heading = "Upcoming Gigs",
+                SearchWord = query
             };
 
 

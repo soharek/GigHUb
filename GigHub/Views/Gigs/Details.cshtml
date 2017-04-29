@@ -1,0 +1,43 @@
+﻿@using System.Linq
+@model GigHub.Controllers.GigDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div>
+        <h2>@Model.Gig.Artist.GetFullName()</h2>
+
+
+        <button data-artist-id="@Model.Gig.ArtistId" class="btn btn-primary btn-md js-toggle-follow">Follow?</button>
+    </div>
+    
+</div>
+ 
+<div>
+    <p>Performing at @Model.Gig.Venue on @Model.Gig.DateTime.ToShortDateString() at  @Model.Gig.DateTime.ToShortTimeString()</p>
+</div>
+
+
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            
+
+            $(".js-toggle-follow").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/followings", { followeeId: button.attr("data-user-id") })
+                    .done(function () {
+                        button.text("Following");
+                    })
+                    .fail(function () {
+                        alert("Something failed");
+                    });
+            });
+
+        })
+    </script>
+}

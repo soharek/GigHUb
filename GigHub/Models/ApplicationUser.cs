@@ -40,6 +40,11 @@ namespace GigHub.Models
             return userIdentity;
         }
 
+        public string GetFullName()
+        {
+            return Name + " " + LastName;
+        }
+
 
 
         public void Notify(Notification notification)

@@ -36,6 +36,8 @@ namespace GigHub.Models
             Attendances = new Collection<Attendance>();
         }
 
+       
+
         public void Cancel()
         {
             IsCanceled = true;
