@@ -1,4 +1,5 @@
 ﻿using GigHub.Models;
+using GigHub.Repositories;
 using GigHub.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
@@ -12,12 +13,14 @@ namespace GigHub.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext _context;
+        private AttendanceRepositories _attendanceRepositories;
 
 
 
         public HomeController()
         {
             _context = new ApplicationDbContext();
+            _attendanceRepositories = new AttendanceRepositories(_context);
         }
 
         
@@ -42,12 +45,18 @@ namespace GigHub.Controllers
             }
 
 
+            var attendances =
+               _attendanceRepositories.GetFutureAttendances(userId)
+                    .ToLookup(a=>a.GigId);
+
+
             var viewModel = new GigsViewModel
             {
                 UpcomingGigs = upcomingGigs,
                 ShowActions = User.Identity.IsAuthenticated,
                 Heading = "Upcoming Gigs",
-                SearchWord = query
+                SearchWord = query,
+                Attendance = attendances
             };
 
 

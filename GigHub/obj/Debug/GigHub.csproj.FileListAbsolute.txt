@@ -102,3 +102,14 @@ C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\Gig
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\obj\Debug\GigHub.Migrations.NotifcationsandUserNotificationadded.resources
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\AutoMapper.dll
 C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\AutoMapper.xml
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.dll
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Extensions.Conventions.dll
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Web.Common.dll
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Web.Mvc.dll
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Web.WebApi.dll
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\WebActivatorEx.dll
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.xml
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Extensions.Conventions.xml
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Web.Common.xml
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Web.Mvc.xml
+C:\Users\baske\Documents\Visual Studio 2015\Projects\GigHub\GigHub\bin\Ninject.Web.WebApi.xml

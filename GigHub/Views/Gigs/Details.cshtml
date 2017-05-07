@@ -1,5 +1,5 @@
 ﻿@using System.Linq
-@model GigHub.Controllers.GigDetailsViewModel
+@model GigHub.ViewModels.GigDetailsViewModel
 @{
     ViewBag.Title = "Details";
 }
@@ -8,36 +8,40 @@
     <div>
         <h2>@Model.Gig.Artist.GetFullName()</h2>
 
+       @if(User.Identity.IsAuthenticated)
+       {
+           @Html.HiddenFor(x=>x.Gig.ArtistId)
 
-        <button data-artist-id="@Model.Gig.ArtistId" class="btn btn-primary btn-md js-toggle-follow">Follow?</button>
+           if (Model.IsFollowing)
+           {
+               <button class="btn btn-info js-toggle-follow" data-user-id="@Model.Gig.ArtistId">Following</button>
+           }
+           else
+           {
+               <button class="btn btn-default js-toggle-follow" data-user-id="@Model.Gig.ArtistId">Follow</button>
+           }
+       }
+
     </div>
-    
+
 </div>
- 
+
 <div>
     <p>Performing at @Model.Gig.Venue on @Model.Gig.DateTime.ToShortDateString() at  @Model.Gig.DateTime.ToShortTimeString()</p>
 </div>
 
+@if (User.Identity.IsAuthenticated && Model.IsAttending)
+{
+    <p>You are going to this event</p>
+}
 
-
-
-
-@section scripts{
+@section scripts
+{
     <script>
         $(document).ready(function() {
-            
-
-            $(".js-toggle-follow").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/followings", { followeeId: button.attr("data-user-id") })
-                    .done(function () {
-                        button.text("Following");
-                    })
-                    .fail(function () {
-                        alert("Something failed");
-                    });
-            });
-
+            GigDetailsController.init();
         })
     </script>
 }
+
+

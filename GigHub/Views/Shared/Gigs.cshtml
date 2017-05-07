@@ -1,22 +1,20 @@
-﻿@using System.Web.UI.WebControls
-@model GigHub.ViewModels.GigsViewModel
-
+﻿@model GigHub.ViewModels.GigsViewModel
 @{
     ViewBag.Title = "Home Page";
 }
-
-
 <h1>@Model.Heading</h1>
-@using (Html.BeginForm("Search","Gigs"))
+@using (Html.BeginForm("Search", "Gigs"))
 {
     <div class="form-group">
-        <div class="input-group" style="width: 300px;">
-            @Html.TextBoxFor(x=>x.SearchWord,new {@class="form-control", PlaceHolder="Search..."})
-            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+        <div id="searchGigs" class="input-group" style="width: 300px;">
+            @Html.TextBoxFor(m => m.SearchWord, new { @class = "form-control", placeholder = "Search by Artist, Genre or Location..." })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
         </div>
     </div>
 }
-<ul class="gigs">
+<ul id="gigs" class="gigs voffset4">
     @foreach (var gig in Model.UpcomingGigs)
     {
         <li>
@@ -29,50 +27,41 @@
                 </div>
             </div>
             <div class="details">
-                @if (gig.IsCanceled)
-                {
-                    <span class="label label-warning">Canceled</span>
-                }
-              
-              <span class="artist">
-                   @Html.ActionLink(gig.Artist.GetFullName(), "Details", "Gigs", new { id = gig.Id }, null)  
+                <span class="artist">
+                    <a href="@Url.Action("Details", "Gigs", new { id = gig.Id })">
+                        @gig.Artist.GetFullName()
+                    </a>
 
-                   </span>
-                <span class="genre">
-                    @gig.Genre.Name
-                    @if (Model.ShowActions && !gig.IsCanceled)
+                    @if (gig.IsCanceled)
                     {
-                        <button data-gig-id="@gig.Id" class="btn-default btn small-btn btn-xs pull-right js-toggle-attendece">Going? </button>
+                        <span class="label label-warning">Canceled</span>
+                    }
 
+                    @if (Model.ShowActions)
+                    {
+                        <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@gig.ArtistId">Follow</button>
                     }
                 </span>
-               
+                <span class="genre">
+                    @gig.Genre.Name
+                </span>
+                @if (Model.ShowActions && !gig.IsCanceled)
+                {
+                    <button data-gig-id="@gig.Id" 
+                            class="btn @(Model.Attendance.Contains(gig.Id) ? "btn-info" : "btn-default" ) 
+                            btn-sm pull-right js-toggle-attendance">Going?</button>
+                }
             </div>
         </li>
     }
 </ul>
-
-
-
 @section scripts
 {
     <script>
         $(document).ready(function() {
-            $(".js-toggle-attendance").click(function(e) {
-                var button = $(e.target);
-                $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
-                    .done(function() {
-                        button
-                            .removeClass("btn-default")
-                            .addClass("btn-info")
-                            .text("Going");
-                    })
-                    .fail(function() {
-                        alert("Something failed!");
-                    });
-            });
 
-           
+            GigsController.init("#gigs");
+            
         });
     </script>
 }
